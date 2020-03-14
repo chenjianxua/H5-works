@@ -1,0 +1,37 @@
+fieldset {
+    width: 625px;
+}
+
+nav {
+    width: 600px;
+    height: 40px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: #a8a8a8 1px solid;
+}
+
+nav div {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 10px;
+    position: relative;
+}
+
+legend {
+    color: red;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+article {
+    width: 550px;
+    height: 60px;
+    margin-left: 30px;
+    /* border: red 1px solid; */
+}
+
+article p {
+    /* line-height: px; */
+    margin-top: 0;
+}
