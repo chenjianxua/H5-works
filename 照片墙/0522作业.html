@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 120px;
+            height: 120px;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+        
+        article {
+            background-image: url(images/bg3.jpg);
+            width: 1000px;
+            height: 200px;
+        }
+        
+        div {
+            float: left;
+            background-color: #fff;
+            width: 130px;
+            height: 155px;
+            margin-left: 31px;
+            margin-top: 20px;
+            box-shadow: 1px 1px 3px #444;
+        }
+        
+        div p {
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .one {
+            transform-origin: 50% 0;
+            transform: rotate(-5deg);
+        }
+        
+        .two {
+            transform: translateY(-10px);
+        }
+        
+        .three {
+            transform: rotate(-10deg);
+        }
+        
+        .four {
+            transform: scale(0.9, 0.9);
+        }
+        
+        .five {
+            transform-origin: 0 0;
+            transform: rotate(5deg);
+        }
+        
+        .six {
+            transform-origin: left-center;
+            transform: rotate(-10deg);
+        }
+        
+        div:hover {
+            transform: rotate(0);
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <div class="one">
+            <img src="images/11.jpg">
+            <p>相识</p>
+        </div>
+        <div class="two">
+            <img src="images/22.jpg">
+            <p>凝视</p>
+        </div>
+        <div class="three">
+            <img src="images/33.jpg">
+            <p>甜睡</p>
+        </div>
+        <div class="four">
+            <img src="images/44.jpg">
+            <p>逗乐</p>
+        </div>
+        <div class="five">
+            <img src="images/55.jpg">
+            <p>奔跑</p>
+        </div>
+        <div class="six">
+            <img src="images/66.jpg">
+            <p>漠视</p>
+        </div>
+
+    </article>
+</body>
+
+</html>
