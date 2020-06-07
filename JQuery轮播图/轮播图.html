@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 590px;
+            height: 470px;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .image {
+            margin-left: 300px;
+        }
+        
+        .nav {
+            position: absolute;
+            top: 440px;
+            left: 280px;
+        }
+        
+        .nav li {
+            float: left;
+            width: 10px;
+            height: 10px;
+            background-color: gray;
+            cursor: pointer;
+            margin: 0 4px;
+            border-radius: 50%;
+        }
+        
+        ul.image li {
+            position: absolute;
+            left: 300px;
+            opacity: 0;
+        }
+        
+        ul.image li.opa {
+            opacity: 1;
+        }
+        
+        #pre {
+            position: absolute;
+            top: 220px;
+            left: 310px;
+            color: white;
+            font-size: 25px;
+        }
+        
+        #next {
+            position: absolute;
+            top: 220px;
+            left: 860px;
+            font-size: 25px;
+            color: white;
+        }
+        
+        .nav .active {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="image">
+            <li><img src="image/1.jpg"></li>
+            <li><img src="image/2.jpg"></li>
+            <li><img src="image/3.jpg"></li>
+            <li><img src="image/4.jpg"></li>
+            <li><img src="image/5.jpg"></li>
+            <li><img src="image/6.jpg"></li>
+            <li><img src="image/7.jpg"></li>
+            <li><img src="image/8.jpg"></li>
+        </ul>
+        <p id="pre">
+            <</p>
+                <p id="next">></p>
+                <ul class="nav">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+    </div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+    var index = 0;
+    var length = $(".image li").length;
+    var nav = $(".nav li");
+
+    function autochange() {
+        index = (index + 1) % length;
+        changeTo(index);
+        $(".box .image li").eq(index).fadeIn(3000);
+        nav.eq(index).addClass("active").siblings().removeClass("active");
+    }
+
+    function changeTo(index) {
+        $('.image li').eq(index).addClass('opa').siblings().removeClass('opa');
+    }
+    $(".image li").eq(index).addClass("opa");
+    var timer = setInterval(autochange, 3000);
+    $('#pre').click(function() {
+        index--;
+        if (index < 0) index = length - 1;
+        changeTo(index);
+        $(".box .image li").eq(index).fadeIn(3000);
+        nav.eq(index).addClass("active").siblings().removeClass("active");
+    });
+    $('#next').click(function() {
+        index = (index + 1) % length;
+        changeTo(index);
+        $(".box .image li").eq(index).fadeIn(3000);
+        nav.eq(index).addClass("active").siblings().removeClass("active");
+    });
+    $(".box").hover(
+        function() {
+            clearInterval(timer);
+        },
+        function() {
+            timer = setInterval(autochange, 3000);
+        }
+    );
+    nav.mouseover(function() {
+        index = $(this).index();
+        $(".box .image li").eq(index).fadeIn(3000);
+        $(this).addClass("active").siblings().removeClass("active");
+        changeTo(index);
+    })
+</script>
+
+</html>
